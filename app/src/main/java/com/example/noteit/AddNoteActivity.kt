@@ -1,5 +1,6 @@
 package com.example.noteit
 
+import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -16,6 +17,13 @@ class AddNoteActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_note)
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = android.graphics.Color.parseColor("#FFA500")
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.decorView.systemUiVisibility =
+                window.decorView.systemUiVisibility or android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        }
         etHeading = findViewById(R.id.etHeading)
         etContent = findViewById(R.id.etContent)
 

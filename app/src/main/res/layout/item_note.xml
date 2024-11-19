@@ -12,6 +12,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="5dp"
         android:background="@drawable/note_background">
 
         <TextView
@@ -20,22 +21,21 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:fontFamily="@font/amiko_bold"
             android:padding="5dp"
+            android:textColor="#303F9F"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/deleteIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="-2dp"
-            android:layout_marginBottom="-2dp"
             android:background="@drawable/delete_button_background"
             android:contentDescription="Delete Icon"
-            android:padding="5dp"
-            android:src="@android:drawable/ic_menu_delete" />
+            android:src="@drawable/delete" />
 
     </RelativeLayout>
 

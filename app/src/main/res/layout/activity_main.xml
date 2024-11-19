@@ -1,36 +1,58 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/design_default_color_on_primary"
+    android:background="@drawable/background_design"
     tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/edit_text_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:searchHintIcon="@mipmap/ic_search_foreground" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:numColumns="2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="16dp"
-        android:background="@color/design_default_color_on_primary"
-        />
+        android:numColumns="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchView" />
 
     <TextView
         android:id="@+id/tvEmptyMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add To See"
+        android:fontFamily="@font/amiko_bold"
+        android:text="@string/no_notes"
+        android:textColor="#A73A3F8C"
         android:textSize="20sp"
-        android:layout_centerInParent="true"
-        android:visibility="gone" />
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/addButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
         android:src="@mipmap/addbutton_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
